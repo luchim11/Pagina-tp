@@ -2,6 +2,8 @@
 const form = document.getElementById("form");
 // valores del form
 
+
+
 let precio = 0;
 const pagar = document.getElementById("pagar");
 console.log(pagar)
@@ -24,10 +26,18 @@ form.addEventListener("submit", e => {
             precio = 200 * 0.85 * cantidad;
             break;
     }
-    pagar.innerText = `Total a pagar: ${precio}$`
+    pagar.innerHTML = `<strong>Total a pagar: ${precio}$</strong>`
 })
 
-const borrar = () => {
+const botonBorrar = document.getElementById("borrar");
+
+botonBorrar.addEventListener("click",borrar);
+
+/* const borrar = () => {
     form.reset();
     pagar.innerText = `Total a pagar: $`;
+} */
+function borrar(){
+    form.reset();
+    pagar.innerHTML = `<strong>Total a pagar: $</strong>`;
 }
